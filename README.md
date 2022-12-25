@@ -43,3 +43,11 @@ This system makes the entire control process much more easier.
   * Wait until the system finishes loading.
   * Click the button and select the correct folder.
   * Wait again until the process is finished and after this enjoy!
+
+## 👥 Contributors
+
+<p align="center">
+  <a href="https://github.com/noamzuck/The-Control-System/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=noamzuck/The-Control-System" />
+  </a>
+</p>
