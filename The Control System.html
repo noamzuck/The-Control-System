@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap'); </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 48
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="main/style.css"/>
+    <title>The Control System | Home</title>
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <div class="container">
+        <div id="loadingDiv" class="titleDiv loadingAnim">
+            <div class="titleDiv2">
+                <p id="title" class="titleAnim">Welcome To The Control System</p>
+            </div>
+        </div>
+
+        <div id="mainDiv" class="titleDiv mainAnim" style="display: none;">
+            <div id="titleDiv2" class="titleDiv2">
+                <p id="title" class="title" style="margin-bottom: 35px;">The Control System</p>
+                <div class="center">
+                    <button class="button" onclick="sound()">
+                        למערכת השמע
+                        <span class="material-symbols-outlined" style="font-size: 150%; position: relative; top: 25px">headphones</span>
+                    </button>
+                    <button class="button" onclick="video()">
+                        למערכת הוידאו
+                        <span class="material-symbols-outlined" style="font-size: 150%; position: relative; top: 25px">movie</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main/app.js"></script>
+</html>

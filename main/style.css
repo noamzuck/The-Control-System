@@ -1,0 +1,158 @@
+body {
+    direction: rtl;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    float: center;
+    font-family: 'Dancing Script', cursive;
+    background-color: rgb(0, 24, 56);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    float: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 24, 56);
+}
+
+.center {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    height: 70%;
+}
+
+.titleDiv {
+    background-color: white;
+    border-radius: 45px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 9px;
+    position: relative;
+}
+
+.mainAnim {
+    animation-name: heightInMain;
+    animation-duration: 1s;
+    height: 90%;
+    width: 80%;
+}
+
+@keyframes heightInMain {
+    0% {
+        height: 0;
+        width: 5%;
+    }
+    50% {
+        height: 90%;
+        width: 5%;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+.loadingAnim {
+    animation-name: heightInLoad;
+    animation-duration: 1s;
+    height: 25%;
+    width: 60%;
+}
+
+@keyframes heightInLoad {
+    0% {
+        height: 0;
+        width: 5%;
+    }
+    50% {
+        height: 25%;
+        width: 5%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+.titleDiv2 {
+    border: 5px black solid;
+    background-color: white;
+    border-radius: 40px;
+    height: 99%;
+    width: 100%;
+    text-align: center;
+}
+
+.titleAnim {
+    color: rgb(0, 0, 0);
+    font-size: 450%;
+    animation-duration: 3s;
+    animation-name: fadeInTitle;
+    width: 100%;
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.title {
+    color: black;
+    font-size: 400%;
+    animation-duration: 3s;
+    animation-name: fadeInTitle;
+    width: 100%;
+    margin-top: 35px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.button {
+    padding: 90px 45px;
+    text-align: center;
+    font-size: 350%;
+    font-family: 'Assistant', sans-serif;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: none;
+    color: white;
+    background-color: rgb(0, 24, 56);
+    border: 2px white solid;
+    margin: 0 5px;
+    animation: fadeIn 2s;
+}
+
+.button:hover {
+    border: 2px rgb(0, 24, 56) solid;
+    background-color: white;
+    color: rgb(0, 24, 56);
+}
+
+@keyframes fadeIn {
+    0%, 25% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}

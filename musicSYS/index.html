@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap'); </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 48
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <title>The Control System | Sound</title>
+    <link rel="icon" href="../logo.png">
+</head>
+<body>
+    <canvas id="canvas" class="visualiser" style="display: none;"></canvas>
+    <div class="container">
+        <div id="loadingDiv" class="titleDiv loadingAnim">
+            <div class="titleDiv2">
+                <p id="title" class="titleAnim">Welcome To The Control System</p>
+            </div>
+        </div>
+
+        <input id="fileselector" type="file" onchange="browseResult(event)" webkitdirectory directory multiple="false" style="display:none; position: fixed;">
+            <button onclick="getElementById('fileselector').click()" class="button" style="display:none" id="hideBtnRe">
+                טעינת תיקיה
+                <span class="material-symbols-outlined" style="font-size: 100%;">sync</span>
+            </button>
+        </input>
+
+        <div id="mainDiv" class="titleDiv mainAnim" style="display: none;">
+            <div id="titleDiv2" class="titleDiv2">
+                <p id="title" class="title" style="margin-bottom: 35px;">The Control System</p>
+
+                <div class="menuBar">
+                    <input id="fileselector" type="file" onchange="browseResult(event)" webkitdirectory directory multiple="false" style="display:none">
+                        <button onclick="getElementById('fileselector').click()" class="button">
+                            טעינה מחדש
+                            <span class="material-symbols-outlined" style="font-size: 100%;">sync</span>
+                        </button>
+                    </input>
+
+                    <button class="button" onclick="fullScreen()">
+                        הגדלת מסך
+                        <span class="material-symbols-outlined" style="font-size: 100%;">fullscreen</span>
+                    </button>
+
+                    <button class="button" onclick="refresh()">
+                        רענון הדף
+                        <span class="material-symbols-outlined" style="font-size: 100%;">refresh</span>
+                    </button>
+
+                    <button class="button" onclick="help()">
+                        עזרה
+                        <span class="material-symbols-outlined" style="font-size: 100%;">help</span>
+                    </button>
+
+                    <button class="button" onclick="info()">
+                        אודות
+                        <span class="material-symbols-outlined" style="font-size: 100%;">info</span>
+                    </button>
+
+                    <button class="button" onclick="visualOn()">
+                        ויזואלייזר (עובד רק באונליין)
+                        <span class="material-symbols-outlined" style="font-size: 100%;">equalizer</span>
+                    </button>
+                </div>
+                
+                <table style="border-collapse: collapse; width: 75%; margin-top: 25px; margin-left: auto; margin-right: auto;">
+                    <tbody id="card" class="card"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <p id="volume" class="songName float">100%</p>
+            <input type="range" min="0" max="100" value="100" class="slider sliderVol" id="volumeSlider">
+        </div>
+
+        <input type="range" min="0" max="100" value="0" class="slider sliderTime" id="timeSlider">
+    </div>
+
+    <div class="container" style="height: auto; animation: fadeIn 3s;">
+        <div id="botBar" class="titleDiv mainAnim2" style="display: none;">
+            <div id="titleDiv2" class="titleDiv2">
+                <div style="display: flex; justify-content: center;">
+                    <p id="currentTime" class="time">00:00</p>
+
+                    <button id="playBtn" class="playButton" style="padding: 10px 15px;" onclick="playAudio()">
+                        הפעלה
+                        <span class="material-symbols-outlined" style="position: relative; top: 5px;">play_circle</span>
+                    </button>
+
+                    <button id="stopBtn" class="playButton" style="padding: 10px 15px; display: none;" onclick="stopAudio()">
+                        עצירה
+                        <span class="material-symbols-outlined" style="position: relative; top: 5px;">pause_circle</span>
+                    </button>
+
+                    <div style="width: 15px"></div>
+
+                    <p id="allTime" class="time">00:00</p>
+                    <audio id="player" controls style="display: none;">
+                        <source src="d.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cont-alert" class="cont-alert" onclick="hideInfo()" style="display: none;">
+        <div class="alert" style="animation: alert 0.5s;">
+            <p id="title" class="description" style="font-size: 350%; font-family: 'Dancing Script', cursive; margin-bottom: 0px; margin-top: 15px;">About The Control System</p>
+            <p class="description">
+                תוכנה זו נוצרה על ידי Noam Zuck
+                <br>
+                התוכנה היא חינמית ובקוד פתוח.
+                <br>
+                קוד התוכנה נמצאת באתר GitHub.
+                <br><br>
+                תודות:
+                <br>
+                https://codepen.io/nfj525/pen/rVBaab
+                <br>
+                https://www.youtube.com/watch?v=zniBM8mroKU
+            </p>
+
+            <button class="button" onclick="hideInfo()" style="animation: fadeIn 1s;">
+                סגירה
+                <span class="material-symbols-outlined" style="font-size: 100%;">close</span>
+            </button>
+        </div>
+    </div>
+    
+    <div id="cont-alert-help" class="cont-alert" onclick="hideHelp()" style="display: none;">
+        <div class="alert" style="height: 65%; width: 55%; animation: alert-help 0.5s; overflow-y: scroll;">
+            <p id="title" class="description" style="font-size: 350%; font-family: 'Dancing Script', cursive; margin-bottom: 0px; margin-top: 15px;">Help For The Control System</p>            
+
+            <p class="description">כל פעם שמשנים משהו בתיקיית השירים יש לטעון את התיקיה מחדש על ידי לחיצה על הכפתור הבא:</p>
+
+            <input id="fileselector" type="file" onchange="browseResult(event)" webkitdirectory directory multiple="false" style="display:none">
+                <button onclick="getElementById('fileselector').click()" class="button">
+                    טעינה מחדש
+                    <span class="material-symbols-outlined" style="font-size: 100%;">sync</span>
+                </button>
+            </input>
+
+            <br><br>
+
+            <p class="description" style="margin-bottom: 0; font-size: 200%;">קיצורי מקשים</p>
+            <p class="description" style="margin-top: 0;">שימו לב שניתן להשתמש בגלגלת כדי להריץ או כדי להגביר על ידי הנחה של העכבר על אחד הסליידרים.</p>
+
+            <img src='help.png' height="400px">
+            <br>
+            <img src='help3.png' height="350px">
+            <br><br>
+            <img src='help4.png' height="250px">
+            <br>
+            <img src='help5.png' height="250px">
+
+            <br>
+
+            <button class="button" onclick="hideInfo()" style="animation: fadeIn 1s; margin-top: 25px;">
+                סגירה
+                <span class="material-symbols-outlined" style="font-size: 100%;">close</span>
+            </button>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

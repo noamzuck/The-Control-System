@@ -1,0 +1,450 @@
+body {
+    direction: rtl;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    float: center;
+    font-family: 'Dancing Script', cursive;
+    background-color: rgb(0, 24, 56);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    float: center;
+    width: 100%;
+    height: 90vh;
+    margin: -50px 0;
+    background-color: rgb(0, 24, 56);
+}
+
+.titleDiv {
+    background-color: white;
+    border-radius: 45px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 9px;
+    position: relative;
+}
+
+.mainAnim {
+    animation-name: heightInMain;
+    animation-duration: 1s;
+    height: 80%;
+    width: 90%;
+}
+
+@keyframes heightInMain {
+    0% {
+        height: 0;
+        width: 5%;
+    }
+    50% {
+        height: 80%;
+        width: 5%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+.loadingAnim {
+    animation-name: heightInLoad;
+    animation-duration: 1s;
+    height: 25%;
+    width: 60%;
+}
+
+@keyframes heightInLoad {
+    0% {
+        height: 0;
+        width: 5%;
+    }
+    50% {
+        height: 25%;
+        width: 5%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+.titleDiv2 {
+    border: 5px black solid;
+    background-color: white;
+    border-radius: 40px;
+    height: 99%;
+    width: 100%;
+    text-align: center;
+}
+
+.titleAnim {
+    color: rgb(0, 0, 0);
+    font-size: 450%;
+    animation-duration: 3s;
+    animation-name: fadeInTitle;
+    width: 100%;
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.title {
+    color: black;
+    font-size: 400%;
+    animation-duration: 3s;
+    animation-name: fadeInTitle;
+    width: 100%;
+    margin-top: 35px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.button {
+    padding: 15px 45px;
+    text-align: center;
+    font-size: 150%;
+    font-family: 'Assistant', sans-serif;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: none;
+    color: white;
+    background-color: rgb(0, 24, 56);
+    border: 2px white solid;
+    margin: 0 5px;
+}
+
+.button:hover {
+    border: 2px rgb(0, 24, 56) solid;
+    background-color: white;
+    color: rgb(0, 24, 56);
+}
+
+.menuBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: menuBarAnimation;
+    animation-duration: 1s;
+    position: relative;
+}
+
+@keyframes menuBarAnimation {
+    0% {
+        top: 350%;
+        opacity: 0;
+    }
+    100% {
+        top: 0%;
+        opacity: 100%;
+    }
+}
+
+.cont-alert {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgba(0, 12, 27, 0.582);
+    bottom: 0%;
+    left: 0%;
+    cursor: pointer;
+    animation-duration: 1s;
+    animation-name: fadeIn;
+}
+
+.alert {
+    background-color: rgb(0, 24, 56);
+    border: 2px white solid;
+    padding: 45px;
+    position: relative;
+    width: 40%;
+    height: 45%;
+    bottom: 3%;
+    border-radius: 50px;
+    cursor: auto;
+}
+
+@keyframes alert {
+    0% {
+        bottom: -100%;
+        height: 0;
+    }
+    60% {
+        height: 10%;
+    }
+    100% {
+        bottom: 3%;
+        height: 45%;
+    }
+}
+
+@keyframes alert-help {
+    0% {
+        bottom: -100%;
+        height: 0;
+    }
+    60% {
+        height: 10%;
+    }
+    100% {
+        bottom: 3%;
+        height: 65%;
+    }
+}
+
+.description {
+    color: white;
+    font-family: 'Assistant', sans-serif;
+    font-size: 150%;
+    animation-duration: 2s;
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    0%, 25% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.fadeOut {
+    display: none;
+    opacity: 0%;
+    animation-duration: 0.25s;
+    animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+    0% {
+        display: flex;
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+        display: none;
+    }
+}
+
+.mainAnim2 {
+    animation-name: heightInMain2;
+    animation-duration: 0.5s;
+    width: 25%;
+}
+
+@keyframes heightInMain2 {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 25%;
+    }
+}
+
+.card {
+    padding-bottom: 25px;
+}
+  
+.item {
+    width: 49%;
+    padding: 5px;
+    animation: row 1s;
+    position: relative;
+    background-color: rgb(0, 24, 56);
+    border-radius: 30px;
+    padding-bottom: 15px;
+    animation: fadeIn 2s;
+}
+
+.column {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 5px;
+    position: relative;
+    animation: slide-right 2.25s;
+    right: 0%;
+}
+
+@keyframes slide-right {
+    0%, 20% {
+        right: 300%;
+    }
+    100% {
+        right: 0%;
+    }
+}
+
+.row {
+    width: 90%;
+    background-color: rgb(0, 24, 56);
+    padding: 5px 0;
+    border-radius: 50px;
+    color: white;
+    border: 2px white solid;
+    transition: 0.25s;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes row {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 0%;
+    }
+}
+
+.playButton {
+    padding: 10px 11px;
+    text-align: center;
+    font-family: 'Assistant', sans-serif;
+    border-radius: 75px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: none;
+    color: white;
+    background-color: rgb(0, 24, 56);
+    border: 2px white solid;
+    margin: 0;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.playButton:hover {
+    border: 2px rgb(0, 24, 56) solid;
+    background-color: white;
+    color: rgb(0, 24, 56);
+}
+
+.songName {
+    font-family: 'Assistant', sans-serif;
+    font-size: 150%;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    top: 7px;
+    animation: fadeIn 4s;
+}
+
+.dirName {
+    font-family: 'Assistant', sans-serif;
+    font-size: 175%;
+    margin: 0;
+    width: 100%;
+    color: white;
+    text-align: right;
+    margin-right: 25px;
+}
+
+.visualiser {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.float {
+    position: fixed;
+    top: 88%;
+    left: -47.5%;
+    color: white;
+}
+
+.slider {
+    -webkit-appearance: none;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    width: 40%;
+    height: 3%;
+    animation: slider 3s;
+}
+
+@keyframes slider {
+    0%, 50% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+  
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background: rgb(255, 0, 0);
+  cursor: pointer;
+  border-radius: 25px;
+  border: 4px white solid;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: rgb(0, 24, 56);
+  cursor: pointer;
+  border: 4px white solid;
+}
+
+.sliderVol {
+    transform: rotate(90deg);
+    transform-origin: 20px;
+    position: fixed;
+    top: 5%;
+    left: 1%;
+    border-radius: 10px;
+}
+
+.sliderTime {
+    position: fixed;
+    bottom: 5%;
+    left: 30%;
+    border-radius: 10px;
+}
+
+.time {
+    color: black;
+    font-family: 'Assistant', sans-serif;
+    font-size: 25px;
+    margin: 0;
+    position: relative;
+    top: 10px;
+}
