@@ -1,11 +1,15 @@
 <h1 align="center">The Control System</h1>
 
-Welcome to The Control System!
+<div align='center'>
+<img src="logo.png" height='150px'>
+<br>
+<b>Welcome!</b>
 <br>
 This system makes the entire control process much more easier.
 
-[See Demo here](https://noamzuck.github.io/The-Control-System)
+[See The Demo here](https://noamzuck.github.io/The-Control-System)
 <br>
+</div>
 
 ## 📦 Started [Local Mode](https://github.com/noamzuck/The-Control-System/archive/refs/heads/main.zip)
   * Download [the zip file](https://github.com/noamzuck/The-Control-System/archive/refs/heads/main.zip) of this repository and extract it.
