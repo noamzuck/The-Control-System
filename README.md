@@ -42,7 +42,7 @@ This system makes the entire control process much more easier.
       +---rap
           +---cool.mp3
   ```
-  * Then open the 'index.html' file from the main folder.
+  * Then open in Google Chrome the 'index.html' file from the main folder.
   * Choose the type of system you want (Sound or Video).
   * Wait until the system finishes loading.
   * Click the button and select the correct folder.
